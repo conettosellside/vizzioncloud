@@ -3,6 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Observable } from 'rxjs';
+import {
+  IMqttMessage,
+  MqttModule,
+  IMqttServiceOptions
+} from 'ngx-mqtt';
+
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  url: 'ws://34.176.154.9:8083',//'ws://34.71.224.154:8083',
+  path: '/mqtt',
+};
 
 @NgModule({
   declarations: [
@@ -10,7 +21,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
   providers: [],
   bootstrap: [AppComponent]
