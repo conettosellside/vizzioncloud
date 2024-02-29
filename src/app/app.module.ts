@@ -11,8 +11,7 @@ import {
 } from 'ngx-mqtt';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  url: 'ws://vizzion.online:8083',
-  path: '/mqtt',
+  url: 'wss://a1l3op29jxs02-ats.iot.sa-east-1.amazonaws.com/mqtt',
 };
 
 @NgModule({
